@@ -66,12 +66,16 @@ os.chdir(repo_base)
 failing_files = set()
 staged_mismatch = set()
 
+changed_files = []
 for status, fname in git.status(filter="MA", cached=True):
     if args.verbose:
         print("Checking {}...".format(fname))
     if check_ignores(fname):
         continue
     print("Checking {}...".format(fname))
+    changed_files.append(fname)
+
+print(changed_files)
 
 for status, fname in git.status(filter="MA", cached=True):
     if args.verbose:
