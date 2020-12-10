@@ -88,6 +88,7 @@ for fname in changed_files:
                 "is not updated!\n")
         sys.exit(1)
 
+sys.exit(0)
 
 for status, fname in git.status(filter="MA", cached=True):
     if args.verbose:
