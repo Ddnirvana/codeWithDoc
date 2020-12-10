@@ -78,7 +78,7 @@ for status, fname in git.status(filter="MA", cached=True):
     changed_files.append(fname)
     changed_files_dict[fname] = 1
 
-print(changed_files)
+#print(changed_files)
 
 for fname in changed_files:
     doc = doc_of_the_code(fname)
