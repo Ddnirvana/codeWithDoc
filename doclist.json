@@ -1,0 +1,5 @@
+{
+	"hello.c" : "helloworld.md",
+	"world.c" : "helloworld.md",
+	"bye.c"	  : "bye.md"
+}
