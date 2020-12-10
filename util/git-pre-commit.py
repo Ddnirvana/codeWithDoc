@@ -82,7 +82,7 @@ print(changed_files)
 
 for fname in changed_files:
     doc = doc_of_the_code(fname)
-    if (doc!='OMGNoDocFound') and (not changed_files_dict.get[doc]):
+    if (doc!='OMGNoDocFound') and (not changed_files_dict.get(doc)):
         print("Source file: ", fname,
                 "is updated while its doc:", doc,
                 "is not updated!\n")
