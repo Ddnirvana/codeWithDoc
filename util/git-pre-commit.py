@@ -48,6 +48,8 @@ from style.style import StdioUI, check_ignores
 
 import argparse
 
+from parsedoclist import doc_of_the_code
+
 parser = argparse.ArgumentParser(
     description="gem5 git style checker hook")
 
@@ -67,15 +69,25 @@ failing_files = set()
 staged_mismatch = set()
 
 changed_files = []
+changed_files_dict = {}
 for status, fname in git.status(filter="MA", cached=True):
     if args.verbose:
         print("Checking {}...".format(fname))
     if check_ignores(fname):
         continue
-    print("Checking {}...".format(fname))
     changed_files.append(fname)
+    changed_files_dict[fname] = 1
 
 print(changed_files)
+
+for fname in changed_files:
+    doc = doc_of_the_code(fname)
+    if (doc!='OMGNoDocFound') and (not changed_files_dict.get[doc]):
+        print("Source file: ", fname,
+                "is updated while its doc:", doc,
+                "is not updated!\n")
+        sys.exit(1)
+
 
 for status, fname in git.status(filter="MA", cached=True):
     if args.verbose:

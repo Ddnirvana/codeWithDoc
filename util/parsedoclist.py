@@ -18,9 +18,9 @@ def doc_of_the_code(code_name):
 
 # The following code is for test
 codeDocList = load_doclist("doclist.json")
-print(codeDocList)
-
-print(doc_of_the_code('hello.c'))
-print(doc_of_the_code('world.c'))
-print(doc_of_the_code('test.c'))
-print(doc_of_the_code('bye.c'))
+#print(codeDocList)
+#
+#print(doc_of_the_code('hello.c'))
+#print(doc_of_the_code('world.c'))
+#print(doc_of_the_code('test.c'))
+#print(doc_of_the_code('bye.c'))
